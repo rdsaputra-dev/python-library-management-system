@@ -11,6 +11,7 @@ def save_data(data):
 
 se = "                               "
 tl = 40
+tj = 4
 
 def garis():
     print("==============================================")
@@ -35,9 +36,11 @@ def print_buku():
     no = 1
     dd = 0
     for buku, jumlah in daftar_buku.items():
-        if no > 9:
-            dd += 1
-        print(f"= {no}. {buku}{se[:tl-len(buku) - dd]}= Tersedia: {jumlah}    =")
+        if no == 10:
+          dd += 1
+        elif no == 100:
+          dd += 1
+        print(f"= {no}. {buku}{se[:tl-len(buku) - dd]}= Tersedia: {jumlah}{se[:tj-len(str(daftar_buku[buku]))]}=")
         no += 1
 
 def tunjuk_buku():
@@ -132,9 +135,9 @@ def lihat_keranjang():
         no = 1
         dd = 0
         for buku in keranjang:
-            if no > 9:
+            if no == 9:
               dd += 1
-            print(f"= {no}. {buku}{se[:tl-len(buku) - dd]} =")
+            print(f"= {no}. {buku}{se[:tl-len(buku) - dd]}=")
             no += 1
 
     garis_pinggir()
@@ -160,9 +163,9 @@ def kasir():
         no = 1
         dd = 0
         for buku in keranjang:
-            if no > 9:
+            if no == 9:
                 dd += 1
-            print(f"= {no}. {buku}{se[:tl-len(buku) - dd]}=")
+            print(f"= {no}. {buku}{se[:tl-len(buku) - dd ]}=")
             no += 1
 
         garis_pinggir()
